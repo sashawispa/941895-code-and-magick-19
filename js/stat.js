@@ -37,16 +37,16 @@ function generateColor(item, i, ctx) {
 function generate(ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     var maxTime = getMaxElement(times);
-    var NewBarHeight = (BAR_HEIGHT * times[i]) / maxTime;
+    var newBarHeight = (BAR_HEIGHT * times[i]) / maxTime;
     var BarX = CLOUD_X + BAR_GAP + (BAR_WIDTH + BAR_GAP) * i;
-    var BarY = CLOUD_Y + CLOUD_HEIGHT - Math.floor(NewBarHeight);
+    var BarY = CLOUD_Y + CLOUD_HEIGHT - Math.floor(newBarHeight);
 
     ctx.fillText(names[i], BarX, CLOUD_Y + CLOUD_HEIGHT - FONT_GAP);
     ctx.fillText(Math.floor(times[i]), BarX, BarY - FONT_GAP * 2.5);
 
     generateColor(names[i], i, ctx);
 
-    ctx.fillRect(BarX, BarY - FONT_GAP * 1.5, BAR_WIDTH, NewBarHeight);
+    ctx.fillRect(BarX, BarY - FONT_GAP * 1.5, BAR_WIDTH, newBarHeight);
     ctx.fillStyle = FILL_STULE;
   }
 }
